@@ -1,0 +1,21 @@
+/gate/world/daughters/name phantom
+/gate/world/daughters/insert cylinder
+/gate/phantom/setMaterial Body
+/gate/phantom/vis/setColor gray
+/gate/phantom/geometry/setRmax 10.0 cm
+/gate/phantom/geometry/setHeight 20.0 cm
+/gate/phantom/placement/setTranslation 0 0 0 mm
+/gate/phantom/vis/forceSolid
+/gate/phantom/vis/setVisible 1
+
+/gate/phantom/attachPhantomSD
+
+# EASY ONE COMPARTMENT PHANTOM
+
+#/gate/world/daughters/name phantom
+#/gate/world/daughters/insert cylinder
+#/gate/phantom/setMaterial Water
+#/gate/phantom/vis/forceWireframe
+#/gate/phantom/vis/setColor blue
+#/gate/phantom/geometry/setRmax   283. cm
+#/gate/phantom/geometry/setHeight 500. cm

@@ -1,0 +1,107 @@
+######## Build Geometry ########
+
+/gate/world/geometry/setXLength 150. cm
+/gate/world/geometry/setYLength 150. cm
+/gate/world/geometry/setZLength 100. cm
+/gate/world/vis/setVisible 0
+
+######### Cylindrical PET ########
+
+
+/gate/world/daughters/name cylindricalPET
+/gate/world/daughters/insert cylinder
+/gate/cylindricalPET/setMaterial Air
+/gate/cylindricalPET/geometry/setRmax 575 mm
+/gate/cylindricalPET/geometry/setRmin 425 mm
+/gate/cylindricalPET/geometry/setHeight 500 mm
+/gate/cylindricalPET/vis/forceWireframe
+/gate/cylindricalPET/vis/setColor white
+/gate/cylindricalPET/vis/setVisible 1
+
+
+######### rsector~Red_Module  ########
+
+/gate/cylindricalPET/daughters/name red_module
+/gate/cylindricalPET/daughters/insert box
+/gate/red_module/placement/setTranslation 0 486. 0 mm
+/gate/red_module/geometry/setXLength 122. mm
+/gate/red_module/geometry/setYLength 105 mm
+/gate/red_module/geometry/setZLength 520 mm
+/gate/red_module/setMaterial Air
+/gate/red_module/vis/setColor red
+/gate/red_module/vis/forceWireframe
+/gate/red_module/vis/setVisible 1
+
+######### rsector~Artificial_Module  ########
+
+/gate/red_module/daughters/name artificial_module
+/gate/red_module/daughters/insert box
+/gate/artificial_module/placement/setTranslation 0 0 0 mm
+/gate/artificial_module/geometry/setXLength 122. mm
+/gate/artificial_module/geometry/setYLength 105 mm
+/gate/artificial_module/geometry/setZLength 520 mm
+/gate/artificial_module/setMaterial Air
+/gate/artificial_module/vis/setColor red
+/gate/artificial_module/vis/forceWireframe
+/gate/artificial_module/vis/setVisible 1
+
+
+#	SCINTILLATOR LAYER 1
+
+/gate/artificial_module/daughters/name scintillator_layer1
+/gate/artificial_module/daughters/insert box
+/gate/scintillator_layer1/placement/setTranslation 0 -14.5 0 mm
+/gate/scintillator_layer1/geometry/setXLength 6 mm
+/gate/scintillator_layer1/geometry/setYLength 24 mm
+/gate/scintillator_layer1/geometry/setZLength 5 mm
+/gate/scintillator_layer1/setMaterial EJ230
+/gate/scintillator_layer1/vis/setColor white
+/gate/scintillator_layer1/vis/forceWireframe
+/gate/scintillator_layer1/vis/setVisible 1
+
+#	SCINTILLATOR LAYER 2
+
+/gate/artificial_module/daughters/name scintillator_layer2
+/gate/artificial_module/daughters/insert box
+/gate/scintillator_layer2/placement/setTranslation 0 14.5 0 mm
+/gate/scintillator_layer2/geometry/setXLength 6 mm
+/gate/scintillator_layer2/geometry/setYLength 24 mm
+/gate/scintillator_layer2/geometry/setZLength 5 mm
+/gate/scintillator_layer2/setMaterial EJ230
+/gate/scintillator_layer2/vis/setColor white
+/gate/scintillator_layer2/vis/forceWireframe
+/gate/scintillator_layer2/vis/setVisible 1
+
+
+#	REPEAT Scintillators
+
+/gate/scintillator_layer1/repeaters/insert cubicArray
+/gate/scintillator_layer1/cubicArray/setRepeatNumberX 13
+/gate/scintillator_layer1/cubicArray/setRepeatNumberY 1
+/gate/scintillator_layer1/cubicArray/setRepeatNumberZ 100
+/gate/scintillator_layer1/cubicArray/setRepeatVector 7 0 5 mm
+
+/gate/scintillator_layer2/repeaters/insert cubicArray
+/gate/scintillator_layer2/cubicArray/setRepeatNumberX 13
+/gate/scintillator_layer2/cubicArray/setRepeatNumberY 1
+/gate/scintillator_layer2/cubicArray/setRepeatNumberZ 100
+/gate/scintillator_layer2/cubicArray/setRepeatVector 7 0 5 mm
+
+
+#	REPEAT rsector (red_module)
+
+/gate/red_module/repeaters/insert ring
+/gate/red_module/ring/setRepeatNumber 20
+
+
+# ATTACH SYSTEM
+
+/gate/systems/cylindricalPET/rsector/attach red_module
+/gate/systems/cylindricalPET/crystal/attach artificial_module
+/gate/systems/cylindricalPET/layer0/attach scintillator_layer1
+/gate/systems/cylindricalPET/layer1/attach scintillator_layer2
+
+
+### DEFINE SD ###
+/gate/scintillator_layer1/attachCrystalSD
+/gate/scintillator_layer2/attachCrystalSD
