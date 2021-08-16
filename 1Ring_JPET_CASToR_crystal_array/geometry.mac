@@ -1,12 +1,11 @@
-######## Build Geometry ########
+# World
 
 /gate/world/geometry/setXLength 150. cm
 /gate/world/geometry/setYLength 150. cm
 /gate/world/geometry/setZLength 100. cm
 /gate/world/vis/setVisible 0
 
-######### Cylindrical PET ########
-
+# Cylindrical PET
 
 /gate/world/daughters/name cylindricalPET
 /gate/world/daughters/insert cylinder
@@ -18,8 +17,7 @@
 /gate/cylindricalPET/vis/setColor white
 /gate/cylindricalPET/vis/setVisible 1
 
-
-######### rsector~Red_Module  ########
+# rsector: red_module
 
 /gate/cylindricalPET/daughters/name red_module
 /gate/cylindricalPET/daughters/insert box
@@ -32,7 +30,7 @@
 /gate/red_module/vis/forceWireframe
 /gate/red_module/vis/setVisible 1
 
-######### rsector~Artificial_Module  ########
+# Module: artificial_module  
 
 /gate/red_module/daughters/name artificial_module
 /gate/red_module/daughters/insert box
@@ -45,8 +43,7 @@
 /gate/artificial_module/vis/forceWireframe
 /gate/artificial_module/vis/setVisible 1
 
-
-#	SCINTILLATOR LAYER 1
+# Scintillator layer 1
 
 /gate/artificial_module/daughters/name scintillator_layer1
 /gate/artificial_module/daughters/insert box
@@ -59,7 +56,7 @@
 /gate/scintillator_layer1/vis/forceWireframe
 /gate/scintillator_layer1/vis/setVisible 1
 
-#	SCINTILLATOR LAYER 2
+# Scintillator layer 2
 
 /gate/artificial_module/daughters/name scintillator_layer2
 /gate/artificial_module/daughters/insert box
@@ -72,8 +69,7 @@
 /gate/scintillator_layer2/vis/forceWireframe
 /gate/scintillator_layer2/vis/setVisible 1
 
-
-#	REPEAT Scintillators
+# repeat scintillators
 
 /gate/scintillator_layer1/repeaters/insert cubicArray
 /gate/scintillator_layer1/cubicArray/setRepeatNumberX 13
@@ -87,21 +83,19 @@
 /gate/scintillator_layer2/cubicArray/setRepeatNumberZ 100
 /gate/scintillator_layer2/cubicArray/setRepeatVector 7 0 5 mm
 
-
-#	REPEAT rsector (red_module)
+# repeat rsector (red_module)
 
 /gate/red_module/repeaters/insert ring
 /gate/red_module/ring/setRepeatNumber 20
 
-
-# ATTACH SYSTEM
+# attach system
 
 /gate/systems/cylindricalPET/rsector/attach red_module
 /gate/systems/cylindricalPET/crystal/attach artificial_module
 /gate/systems/cylindricalPET/layer0/attach scintillator_layer1
 /gate/systems/cylindricalPET/layer1/attach scintillator_layer2
 
+# define sensitive detectors
 
-### DEFINE SD ###
 /gate/scintillator_layer1/attachCrystalSD
 /gate/scintillator_layer2/attachCrystalSD
