@@ -1,0 +1,6 @@
+# OUTPUT
+
+/gate/output/root/enable
+/gate/output/root/setFileName 1ring_nophantom
+/gate/output/root/setRootSinglesFlag 1
+/gate/output/root/setRootCoincidencesFlag 1
