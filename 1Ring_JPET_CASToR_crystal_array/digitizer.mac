@@ -1,9 +1,4 @@
-##########################################################
-#                                                        #
-#                     DIGITIZER                          #
-#                                                        #
-##########################################################
-
+# digitizer
 
 /gate/digitizer/verbose 0
 /gate/digitizer/Singles/insert adderCompton
@@ -16,13 +11,10 @@
 
 /gate/digitizer/Singles/insert thresholder
 /gate/digitizer/Singles/thresholder/setThreshold 200. keV
-#/gate/digitizer/Singles/insert upholder
-#/gate/digitizer/Singles/upholder/setUphold 650. keV
+/gate/digitizer/Singles/insert upholder
+/gate/digitizer/Singles/upholder/setUphold 650. keV
 
-#/gate/digitizer/name Coincidences
-#/gate/digitizer/insert coincidenceSorter
 /gate/digitizer/Coincidences/setInputName Singles
 /gate/digitizer/Coincidences/setWindow 5. ns
 #/gate/digitizer/Coincidences/minSectorDifference 1
-#/gate/digitizer/Coincidences/setDepth 1
 /gate/digitizer/Coincidences/MultiplesPolicy takeAllGoods

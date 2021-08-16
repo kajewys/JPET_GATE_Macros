@@ -1,3 +1,5 @@
+# ATTENUATION MAP
+
 /gate/world/geometry/setXLength 20. cm
 /gate/world/geometry/setYLength 20. cm
 /gate/world/geometry/setZLength 20. cm

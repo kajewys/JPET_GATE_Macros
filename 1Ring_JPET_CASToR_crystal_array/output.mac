@@ -1,3 +1,5 @@
+# OUTPUT
+
 /gate/output/root/enable
 /gate/output/root/setFileName 1ring_array_phantom_s
 /gate/output/root/setRootSinglesFlag 1
