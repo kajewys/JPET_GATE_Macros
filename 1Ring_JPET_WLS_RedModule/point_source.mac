@@ -1,0 +1,18 @@
+#	POINT SOURCE
+
+/gate/source/addSource twogamma
+/gate/source/twogamma/setType backtoback
+/gate/source/twogamma/setActivity 50 kBq
+/gate/source/twogamma/gps/type Point
+/gate/source/twogamma/gps/centre 0. 0. 0. mm
+/gate/source/twogamma/gps/particle gamma
+/gate/source/twogamma/gps/energytype Mono
+/gate/source/twogamma/gps/monoenergy 511 keV
+/gate/source/twogamma/gps/angtype iso
+#/gate/source/twogamma/visualize 2000 magenta 5
+
+#	SET MIN AND MAX EMISSION ANGLES
+#/gate/source/twogamma/gps/mintheta 75. deg
+#/gate/source/twogamma/gps/maxtheta 105. deg
+#/gate/source/twogamma/gps/minphi    60. deg
+#/gate/source/twogamma/gps/maxphi 120. deg
