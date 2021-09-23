@@ -1,0 +1,63 @@
+# P H A N T O M
+
+/gate/world/daughters/name cylinder_phantom
+/gate/world/daughters/insert cylinder
+/gate/cylinder_phantom/geometry/setRmax 100 mm
+/gate/cylinder_phantom/geometry/setHeight 200 mm
+/gate/cylinder_phantom/setMaterial Polyethylene
+/gate/cylinder_phantom/vis/setVisible 1
+/gate/cylinder_phantom/vis/forceSolid
+/gate/cylinder_phantom/vis/setColor white
+
+/gate/cylinder_phantom/daughters/name hole1
+/gate/cylinder_phantom/daughters/insert cylinder
+/gate/hole1/setMaterial Air
+/gate/hole1/geometry/setRmax 20 mm
+/gate/hole1/geometry/setHeight 200 mm
+/gate/hole1/placement/setTranslation 0 -50 0 mm
+/gate/hole1/vis/forceSolid
+/gate/hole1/vis/setVisible 1
+/gate/hole1/vis/setColor gray
+
+
+/gate/cylinder_phantom/daughters/name hole2
+/gate/cylinder_phantom/daughters/insert cylinder
+/gate/hole2/setMaterial Air
+/gate/hole2/geometry/setRmax 20 mm
+/gate/hole2/geometry/setHeight 200 mm
+/gate/hole2/placement/setTranslation 0 50 0 mm
+/gate/hole2/vis/forceSolid
+/gate/hole2/vis/setVisible 1
+/gate/hole2/vis/setColor gray
+
+/gate/cylinder_phantom/daughters/name source_1_insert
+/gate/cylinder_phantom/daughters/insert cylinder
+/gate/source_1_insert/setMaterial Polyethylene
+/gate/source_1_insert/geometry/setRmax 10 mm
+/gate/source_1_insert/geometry/setHeight 200 mm
+/gate/source_1_insert/placement/setTranslation 50 0 0 mm
+/gate/source_1_insert/vis/setVisible 1
+/gate/source_1_insert/vis/forceWireframe
+/gate/source_1_insert/vis/setColor gray
+
+/gate/cylinder_phantom/daughters/name source_2_insert
+/gate/cylinder_phantom/daughters/insert cylinder
+/gate/source_2_insert/setMaterial Polyethylene
+/gate/source_2_insert/geometry/setRmax 20 mm
+/gate/source_2_insert/geometry/setHeight 200 mm
+/gate/source_2_insert/placement/setTranslation 0 0 0 mm
+/gate/source_2_insert/vis/setVisible 1
+/gate/source_2_insert/vis/forceWireframe
+/gate/source_2_insert/vis/setColor gray
+
+/gate/cylinder_phantom/daughters/name source_3_insert
+/gate/cylinder_phantom/daughters/insert cylinder
+/gate/source_3_insert/setMaterial Polyethylene
+/gate/source_3_insert/geometry/setRmax 30 mm
+/gate/source_3_insert/geometry/setHeight 200 mm
+/gate/source_3_insert/placement/setTranslation -50 0 0 mm
+/gate/source_3_insert/vis/setVisible 1
+/gate/source_3_insert/vis/forceWireframe
+/gate/source_3_insert/vis/setColor gray
+
+/gate/cylinder_phantom/attachPhantomSD

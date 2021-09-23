@@ -1,0 +1,63 @@
+#	DEFINE BACKGROUND IN PHANTOM
+
+/gate/source/addSource background
+/gate/source/background/setActivity 2000 kBq
+/gate/source/background/setType backtoback
+/gate/source/background/gps/type Volume
+/gate/source/background/gps/shape Cylinder
+/gate/source/background/gps/radius 10. cm
+/gate/source/background/gps/halfz 10. cm
+/gate/source/background/gps/centre 0. 0. 0. mm
+/gate/source/background/gps/particle gamma
+/gate/source/background/gps/energytype Mono
+/gate/source/background/gps/monoenergy 511 keV
+/gate/source/background/gps/angtype iso
+
+#	FORBIDDEN / COLD AREAS
+
+/gate/source/background/gps/Forbid source_1_insert
+/gate/source/background/gps/Forbid source_2_insert
+/gate/source/background/gps/Forbid source_3_insert
+/gate/source/background/gps/Forbid hole1
+/gate/source/background/gps/Forbid hole2
+
+#	ADDING ACTIVITY TO THREE SOURCES
+
+/gate/source/addSource source_1
+/gate/source/source_1/setType backtoback
+/gate/source/source_1/setActivity 10000 kBq
+/gate/source/source_1/gps/type Volume
+/gate/source/source_1/gps/shape Cylinder
+/gate/source/source_1/gps/radius 1. cm
+/gate/source/source_1/gps/halfz 10. cm
+/gate/source/source_1/gps/centre 50. 0. 0. mm
+/gate/source/source_1/gps/particle gamma
+/gate/source/source_1/gps/energytype Mono
+/gate/source/source_1/gps/monoenergy 511 keV
+/gate/source/source_1/gps/angtype iso
+
+/gate/source/addSource source_2
+/gate/source/source_2/setType backtoback
+/gate/source/source_2/setActivity 20000 kBq
+/gate/source/source_2/gps/type Volume
+/gate/source/source_2/gps/shape Cylinder
+/gate/source/source_2/gps/radius 2. cm
+/gate/source/source_2/gps/halfz 10. cm
+/gate/source/source_2/gps/centre 0. 0. 0. mm
+/gate/source/source_2/gps/particle gamma
+/gate/source/source_2/gps/energytype Mono
+/gate/source/source_2/gps/monoenergy 511 keV
+/gate/source/source_2/gps/angtype iso
+
+/gate/source/addSource source_3
+/gate/source/source_3/setType backtoback
+/gate/source/source_3/setActivity 30000 kBq
+/gate/source/source_3/gps/type Volume
+/gate/source/source_3/gps/shape Cylinder
+/gate/source/source_3/gps/radius 3. cm
+/gate/source/source_3/gps/halfz 10. cm
+/gate/source/source_3/gps/centre -50. 0. 0. mm
+/gate/source/source_3/gps/particle gamma
+/gate/source/source_3/gps/energytype Mono
+/gate/source/source_3/gps/monoenergy 511 keV
+/gate/source/source_3/gps/angtype iso

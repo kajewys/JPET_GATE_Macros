@@ -1,0 +1,43 @@
+# VISUALISATION
+
+/vis/disable
+
+# GEOMETRY
+
+/gate/geometry/setMaterialDatabase GateMaterials.db
+/control/execute geometry.mac
+
+# (no) PHANTOM
+
+/control/execute Phantom.mac
+
+# PHYSICS
+
+/control/execute PhysicsEMLivermorePolar.mac
+/control/execute digitizer.mac
+
+# INITIALIZE
+
+/gate/run/initialize
+
+# SOURCE
+
+/control/execute source_cylinder.mac
+
+# OUTPUT + MAP
+
+/control/execute output.mac
+/control/execute MuMapActor.mac
+
+# RANDOM SEED
+
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed 123456789
+
+# RUN SETTINGS 
+
+#/gate/application/setTotalNumberOfPrimaries 1E6
+/gate/application/setTimeSlice   1 s
+/gate/application/setTimeStart   0 s
+/gate/application/setTimeStop    0.001 s
+/gate/application/startDAQ

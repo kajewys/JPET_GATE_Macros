@@ -1,0 +1,25 @@
+# ATTENUATION MAP
+
+/gate/world/geometry/setXLength 20. cm
+/gate/world/geometry/setYLength 20. cm
+/gate/world/geometry/setZLength 20. cm
+
+/gate/geometry/setMaterialDatabase GateMaterials.db
+
+/gate/world/daughters/name phantom
+/gate/world/daughters/insert cylinder
+/gate/phantom/setMaterial Body
+/gate/phantom/vis/setColor gray
+/gate/phantom/geometry/setRmax 10.0 cm
+/gate/phantom/geometry/setHeight 20.0 cm
+/gate/phantom/placement/setTranslation 0 0 0 mm
+
+/gate/actor/addActor MuMapActor getMuMap
+/gate/actor/getMuMap/attachTo world
+/gate/actor/getMuMap/save mhdoutput/myMapFileName.mhd
+
+/gate/actor/getMuMap/setPosition 0 0 0 mm
+#/gate/actor/getMuMap/setVoxelSize 2.5 2.5 2.5 mm
+/gate/actor/getMuMap/setResolution 80 80 80
+/gate/actor/getMuMap/setEnergy 511 keV
+/gate/actor/getMuMap/setMuUnit 1  1/cm
